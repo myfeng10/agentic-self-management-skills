@@ -1,0 +1,7 @@
+interface:
+  display_name: "Weekly Trajectory"
+  short_description: "Turn weekly logs into a next-week plan"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#2563EB"
+  default_prompt: "Use $weekly-trajectory-review to find my weekly pattern and give me a protect/try/avoid plan."

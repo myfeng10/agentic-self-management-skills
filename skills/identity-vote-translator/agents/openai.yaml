@@ -1,0 +1,7 @@
+interface:
+  display_name: "Identity Votes"
+  short_description: "Track identity votes while users talk"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#7C3AED"
+  default_prompt: "Use $identity-vote-translator to track identity votes from what I say and show my highest-ROI next vote."

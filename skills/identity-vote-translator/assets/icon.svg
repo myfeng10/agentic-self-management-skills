@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Identity Votes icon">
+  <rect width="64" height="64" rx="14" fill="#7C3AED"/>
+  <path d="M20 18h24v28H20z" fill="none" stroke="#F5F3FF" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M26 28l5 5 10-11" fill="none" stroke="#DDD6FE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 50h16" stroke="#C4B5FD" stroke-width="4" stroke-linecap="round"/>
+</svg>
