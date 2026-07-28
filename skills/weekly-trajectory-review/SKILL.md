@@ -51,6 +51,8 @@ The review must end in choices, not observations. Pick the highest-leverage prot
 
 Be gentle about the user's week, but decisive about the plan. Do not offer a menu of possible improvements unless the user asks.
 
+Each of `Protect`, `Try`, and `Avoid` must contain exactly one behavior. Do not hide two or three actions inside one bullet. Choose the action with the strongest evidence-to-impact link.
+
 ## Output
 
 Return:

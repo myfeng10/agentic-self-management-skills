@@ -1,7 +1,7 @@
 interface:
-  display_name: "Next Mode"
-  short_description: "Decide whether to push, switch, or recover"
+  display_name: "Energy Decision Support"
+  short_description: "Choose one safe next action from capacity"
   icon_small: "./assets/icon.svg"
   icon_large: "./assets/icon.svg"
   brand_color: "#0F766E"
-  default_prompt: "Use $energy-decision-support to decide whether I should push, switch modes, or recover from my sleep and timeline."
+  default_prompt: "Use $energy-decision-support to choose one safe next action from my sleep, timeline, recovery, and current decision."

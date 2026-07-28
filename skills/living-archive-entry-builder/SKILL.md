@@ -65,7 +65,7 @@ Avoid:
 
 ## Output
 
-Return either a draft entry or patch existing archive content.
+Return a draft entry inline by default. Write or patch a file only when the user explicitly asks to save it, provides a target file, or asks to edit an existing archive.
 
 For a draft:
 
@@ -81,4 +81,4 @@ Blocks:
 Future-self note:
 ```
 
-For an edit, keep the existing content model and add only what improves continuity.
+For an edit, read the existing archive convention, keep its content model, and add only what improves continuity. Confirm the exact file changed.

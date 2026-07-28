@@ -6,9 +6,9 @@ The shared point of view: users do not need another productivity menu. They need
 
 ## Skills
 
-### Identity Votes
+### Identity Vote Translator
 
-Tracks identity votes while the user talks. Useful when a user describes their day, habits, conflict, procrastination, goals, routines, work, recovery, or repeated behavior. The agent quietly maintains a lightweight vote ledger and presents the strongest identity signal at a natural endpoint.
+Translates one ordinary conversation or end-of-day recap into distinct behavior votes and one next vote. It stays lightweight and does not turn sparse evidence into decimal scores or fixed personality labels. Use the standalone `identity-votes` skill for an explicit multi-day trajectory review.
 
 Install:
 
@@ -18,7 +18,7 @@ npx skills add myfeng10/agentic-self-management-skills --skill identity-vote-tra
 
 ### Next Mode
 
-Decides whether the user should push, switch modes, recover, or stop based on sleep, timeline, meetings, food, context switching, and fatigue signals. The output is one decision, not a generic list of options.
+`energy-decision-support` decides whether the user should push, switch modes, recover, or stop from general sleep, timeline, meeting, food, context-switching, and fatigue signals. It is distinct from the standalone `next-mode`, which specializes in hidden cognitive spend from AI-assisted work.
 
 Install:
 
@@ -53,3 +53,16 @@ npx skills add myfeng10/agentic-self-management-skills --all
 ```
 
 Restart the agent after installing so the new skills are picked up.
+
+## Actual before / after
+
+All four skills were run on realistic scenarios in isolated Codex sessions.
+
+| Skill | Before | After | Material effect |
+|---|---:|---:|---|
+| `energy-decision-support` | 10 | 10 | Kept its decisive general-capacity behavior; UI name now matches the skill. |
+| `identity-vote-translator` | 8 | **10** | Replaced decimals and fixed labels with four distinct one-line behavior votes. |
+| `living-archive-entry-builder` | 10 | 10 | Now drafts inline unless saving or editing a file was explicitly requested. |
+| `weekly-trajectory-review` | 8 | **10** | Each Protect, Try, and Avoid item is now one atomic decision. |
+
+See the [public evaluation note](https://github.com/myfeng10/myfeng10/blob/main/skills-evaluation.md#full-scorecard) for the frozen-suite method and full scorecard.

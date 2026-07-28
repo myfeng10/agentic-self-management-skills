@@ -1,6 +1,6 @@
 ---
 name: identity-vote-translator
-description: Use when a user talks about their day, habits, routines, choices, goals, procrastination, conflict, work, recovery, or repeated behavior. Track identity votes during the conversation and, at a natural endpoint, show what identity they are reinforcing and the highest-ROI next vote.
+description: Use during an ordinary conversation or end-of-day recap when a user describes habits, choices, avoidance, conflict, work, recovery, or a desired future self. At a natural endpoint, translate the strongest behavior signal into a concise identity read and one next vote. For an explicit multi-day or comparative identity review, use identity-votes instead.
 ---
 
 # Identity Vote Translator
@@ -8,6 +8,10 @@ description: Use when a user talks about their day, habits, routines, choices, g
 Use this skill while the user is talking, not only after they request a formal review.
 
 Core principle: behavior disappears, identity accumulates. Every repeated action is a vote for a kind of person.
+
+## Boundary
+
+Keep this skill ambient and lightweight. Do not turn one conversation into a formal identity report, personality diagnosis, or long-horizon certainty. Use `identity-votes` when the user requests a multi-day ledger, comparison, or trajectory review.
 
 ## Core Advantage
 
@@ -56,6 +60,8 @@ Accept any of:
 
 Do not require rigid formatting. If duration is available, use it. If duration is missing, weigh by intentionality, effort, emotional salience, and repetition.
 
+Treat sparse evidence as sparse. Use `low`, `medium`, or `high` evidence strength rather than decimal scores.
+
 ## Vote Ledger
 
 During conversation, maintain a temporary ledger:
@@ -91,6 +97,8 @@ Name danger identities when evidence supports them, but do not shame the user.
 
 These are not labels for the person. They are trajectories being reinforced by repeated behaviors.
 
+For one conversation, say `avoidance vote` or `confrontation vote`, not `Avoider` or `Confronter`. Reserve capitalized identity labels for repeated evidence across several contexts or for the user's own named ontology.
+
 When a danger identity appears, give one concrete "next vote" that redirects it. Keep the tone direct: identify the pattern, name the cost, and prescribe the smallest corrective action.
 
 ## ADHD-Friendly Delivery
@@ -107,15 +115,26 @@ For each strong pattern:
 
 1. Identify the behavior evidence.
 2. Name the identity being reinforced.
-3. Explain the trajectory if repeated for 6 months to 5 years.
-4. Mark whether this identity aligns with the user's stated future self.
-5. Suggest one small shift that changes the next vote.
+3. Name the competing vote or risk only when evidence supports it.
+4. Suggest one small shift that changes the next vote.
 
 If the user has named desired or danger identities, use those terms first. If not, infer identities from evidence.
 
 ## Output
 
-Return:
+Default to:
+
+```text
+Read: one sentence naming the strongest behavior-to-identity signal.
+High-ROI next vote: one concrete action.
+Votes:
+- behavior → identity vote
+Tension: the competing vote or risk, if present.
+```
+
+List each materially distinct vote separately; do not merge building, early feedback, connection, and avoidance into one trait. Keep the list to 2-4 one-line votes.
+
+If the user asks for deeper evidence, expand to:
 
 ```text
 Read: one sentence naming the strongest identity signal.
@@ -123,7 +142,7 @@ High-ROI next vote: the one action most likely to shift the trajectory.
 
 Identity votes
 - Identity: someone who ...
-  Weight: 0.00-1.00
+  Evidence strength: LOW | MEDIUM | HIGH
   Evidence: concrete behaviors from the input
   Trajectory: where this converges if repeated
   Alignment: aligned | mixed | misaligned
@@ -133,4 +152,4 @@ Main tension: the strongest conflict between identities
 Risk to watch: Avoider | Confronter | other, if present
 ```
 
-If the input covers more than one week, include trajectory movement: rising, falling, or stable.
+Do not assign numeric weights. Do not extrapolate a single day into a six-month or five-year identity claim.
